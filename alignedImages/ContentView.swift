@@ -9,9 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+        VStack(){
+            
         ZStack(){
             Image("toronto")
-                .cornerRadius(/*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .cornerRadius(10).padding()
+
+              
             VStack(){
                 Text("CN Tower")
                     .font(.title)
@@ -27,9 +33,31 @@ struct ContentView: View {
                 Color
                     .black
                     .opacity(0.75))                .cornerRadius(5)
-
-        
                 
+        }
+            ZStack(){
+                Image("london")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .cornerRadius(10).padding()
+
+                  
+                VStack(){
+                    Text("Big Ben")
+                        .font(.title)
+                        .fontWeight(.light)
+                        .foregroundColor(Color.white)
+                    Text("London")
+                        .font(.subheadline)
+                        .fontWeight(.thin)
+                        .foregroundColor(Color.white)
+                }
+                .padding()
+                .background(
+                    Color
+                        .black
+                        .opacity(0.75))                .cornerRadius(5)
+        }
         }
 
     }
